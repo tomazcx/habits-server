@@ -11,6 +11,7 @@ export class CreateHabitService {
 	public async execute({title, weekDays}: IRequest): Promise<IHabit> {
 		const prisma = new PrismaClient()
 
+		const parsedDate = dayjs(date).startOf('day')
 		const today = dayjs().startOf('day').toDate() //get date at 00 time
 
 		const habit = await prisma.habit.create({

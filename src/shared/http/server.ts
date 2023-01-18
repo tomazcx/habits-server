@@ -1,9 +1,9 @@
 import 'reflect-metadata'
+import 'express-async-errors'
 import express, {NextFunction, Request, Response} from 'express'
 import cors from 'cors'
 import router from './router'
 import {AppError} from '../erros/AppError'
-import 'express-async-errors'
 
 const app = express()
 

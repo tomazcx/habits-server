@@ -6,6 +6,8 @@ import {DayController} from "../controllers/DayController";
 const dayController = new DayController()
 const daysRouter = Router()
 
+daysRouter.get("/summary", dayController.index)
+
 daysRouter.get("/", validateRequest({
 	query: z.object({
 		date: z.string()

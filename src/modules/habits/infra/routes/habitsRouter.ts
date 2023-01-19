@@ -6,6 +6,7 @@ import {z} from "zod";
 const habitsController = new HabitsController()
 const habitsRouter = Router()
 
+//POST METHOD
 habitsRouter.post("/",
 	validateRequest({
 		body: z.object({
@@ -16,5 +17,12 @@ habitsRouter.post("/",
 		})
 	})
 	, habitsController.create)
+
+//PATCH METHOD
+habitsRouter.patch("/:id/toggle", validateRequest({
+	params: z.object({
+		id: z.string().uuid()
+	})
+}), habitsController.update)
 
 export default habitsRouter

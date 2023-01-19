@@ -2,6 +2,7 @@ import {Request, Response} from 'express'
 import {z} from 'zod'
 import {AppError} from '../../../../shared/erros/AppError'
 import {CreateHabitService} from '../../services/CreateHabitService'
+import {ToggleHabitService} from '../../services/ToggleHabitService'
 
 export class HabitsController {
 	public async create(request: Request, response: Response): Promise<Response> {
@@ -11,5 +12,14 @@ export class HabitsController {
 
 		const habit = await createHabitService.execute({title, weekDays})
 		return response.status(201).json(habit)
+	}
+
+	public async update(request: Request, response: Response): Promise<Response> {
+		const toggleHabitService = new ToggleHabitService()
+		const {id} = request.params
+
+		await toggleHabitService.execute(id)
+
+		return response.status(204).json()
 	}
 }

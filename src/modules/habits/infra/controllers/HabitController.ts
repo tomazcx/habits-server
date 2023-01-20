@@ -1,6 +1,4 @@
 import {Request, Response} from 'express'
-import {z} from 'zod'
-import {AppError} from '../../../../shared/erros/AppError'
 import {CreateHabitService} from '../../services/CreateHabitService'
 import {ToggleHabitService} from '../../services/ToggleHabitService'
 

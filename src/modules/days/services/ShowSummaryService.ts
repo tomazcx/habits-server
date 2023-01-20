@@ -1,6 +1,5 @@
 import {PrismaClient} from "@prisma/client";
 import {SELECT_SUMMARY} from "../../../shared/db/queries/SelectSummarySQL";
-//import {SELECT_SUMMARY} from "../../../shared/db/queries/SelectSummarySQL";
 import {IDaySummary} from "../domain/IDaySummary";
 
 export class ShowSummaryService {

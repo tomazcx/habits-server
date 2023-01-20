@@ -18,6 +18,6 @@ export const SELECT_SUMMARY = `
 				WHERE
 					HWD.week_day = cast(strftime('%w', D.date/1000, 'unixepoch') as int)
 					AND H.created_at <= D.date
-			) as ammount
+			) as amount
 	       	FROM days D`
 

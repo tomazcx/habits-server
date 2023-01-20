@@ -1,5 +1,5 @@
 export interface IDaySummary {
 	date: Date
-	ammount: number
+	amount: number
 	completed: number
 }
